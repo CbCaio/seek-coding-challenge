@@ -1,0 +1,36 @@
+{
+  "name": "seek-job-challenge",
+  "version": "1.0.0",
+  "description": "Seek coding challenge - Ads checkout system",
+  "main": "index.js",
+  "scripts": {
+    "test:integration": "jest --config test/integration/jest.config.js --bail --runInBand --forceExit --passWithNoTests",
+    "test:integration:watch": "jest --config test/integration/jest.config.js --watch --runInBand --passWithNoTests",
+    "test:unit": "jest --config test/unit/jest.config.js --bail --forceExit --coverage --passWithNoTests",
+    "test:unit:watch": "jest --config test/unit/jest.config.js --watch --passWithNoTests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CbCaio/seek-coding-challenge.git"
+  },
+  "keywords": [
+    "Seek"
+  ],
+  "author": "Caio C. Bolognani",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CbCaio/seek-coding-challenge/issues"
+  },
+  "homepage": "https://github.com/CbCaio/seek-coding-challenge#readme",
+  "devDependencies": {
+    "jest": "^22.3.0",
+    "eslint": "^4.15.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jest": "^21.6.2",
+    "eslint-plugin-node": "^5.2.1"
+  },
+  "engines": {
+    "node": "=8.9.3"
+  }
+}

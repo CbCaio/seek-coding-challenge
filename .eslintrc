@@ -1,0 +1,46 @@
+{
+  "plugins": ["jest", "node"],
+  "extends": ["airbnb-base", "eslint:recommended", "plugin:node/recommended"],
+  "env": {
+    "node": true,
+    "es6": true,
+    "jest/globals": true
+  },
+  "rules": {
+    "object-curly-spacing": "warn",
+    "no-multi-spaces": "error",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ],
+    "no-restricted-syntax": 0,
+    "arrow-body-style": 0,
+    "global-require": 0,
+    "func-names": 0,
+    "no-param-reassign": 0,
+    "no-prototype-builtins": 0,
+    "prefer-arrow-callback": [
+      "error",
+      {
+        "allowNamedFunctions": true
+      }
+    ],
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "never"
+      }
+    ],
+    "jest/no-disabled-tests": "warn",
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
+    "jest/prefer-to-have-length": "warn",
+    "jest/valid-expect": "error"
+  }
+}
