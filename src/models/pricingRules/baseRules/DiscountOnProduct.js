@@ -1,10 +1,10 @@
 const PricingRule = require('../abstracts/AbstractPricingRule');
 
 module.exports = class DiscountOnProduct extends PricingRule {
-  constructor(productId, discountValue, minimumProductsToEnable = 1){
+  constructor(productId, finalPrice, minimumProductsToEnable = 1){
     super();
     this.targetProductId = productId;
-    this.discountValue = discountValue;
+    this.finalPrice = finalPrice;
     this.minimumProductsToEnable = minimumProductsToEnable;
   }
 
@@ -19,7 +19,9 @@ module.exports = class DiscountOnProduct extends PricingRule {
     const targetProducts = products[this.targetProductId];
 
     for(let product of targetProducts){
-      product.discount = this.discountValue;
+      let discount = product.currentPrice - this.finalPrice;
+      discount = (discount > 0) ? discount : product.currentPrice;
+      product.discount = discount;
     }  
   }
 };
