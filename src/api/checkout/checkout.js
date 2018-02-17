@@ -7,15 +7,7 @@ const router = new Router();
 
 router.route('/checkout')
   .post(
-    function validationMiddleware(req, res, next) {
-      try{
-        validateSchema(postCheckoutValidationSchema);
-        return next();
-      }catch(e){
-        res.status(400).json({});
-        return next(e);
-      }
-    },
+    validateSchema(postCheckoutValidationSchema),
     async function postCheckoutRoute(req, res, next) {
     try {
       const response = await PostCheckoutResponseBuilder.build(req.body);

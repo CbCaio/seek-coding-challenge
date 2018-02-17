@@ -8,11 +8,11 @@
     "properties": {
       "customer": {
         "type": "string",
-        "maxLength": 255
+        "enum": ["unilever", "nike", "apple","ford", "default"]
       },
       "product": {
         "type": "string",
-        "maxLength": 255
+        "enum": ["classic", "standout", "premium"]
       }
     },
     "additionalProperties": false

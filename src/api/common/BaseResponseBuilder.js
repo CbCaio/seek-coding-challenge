@@ -1,4 +1,6 @@
 /* eslint-disable no-unused-vars, class-methods-use-this */
+const DefaultTransformer = require('./DefaultTransformer');
+
 module.exports = class AbstractResponseBuilder {
   static build(args = {}) {
     return this.processData(args).then((data) => {
@@ -18,23 +20,3 @@ module.exports = class AbstractResponseBuilder {
     return DefaultTransformer;
   }
 };
-
-class DefaultTransformer {
-  static body(body) {
-    return body;
-  }
-
-  static statusCode(code = 200) {
-    return code;
-  }
-
-  static transform(body) {
-    const contentBody = this.body(body);
-    const statusCode = this.statusCode();
-
-    return {
-      statusCode,
-      body: contentBody,
-    };
-  }
-}
