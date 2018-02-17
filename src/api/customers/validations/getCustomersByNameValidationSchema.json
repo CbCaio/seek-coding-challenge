@@ -1,0 +1,15 @@
+{
+  "params": {
+    "type": "object",
+    "required": [
+      "name"
+    ],
+    "properties": {
+      "name": {
+        "type": "string",
+        "enum": ["unilever", "nike", "apple", "ford","default"]
+      }
+    },
+    "additionalProperties": false
+  }
+}
