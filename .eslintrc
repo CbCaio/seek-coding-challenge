@@ -44,6 +44,7 @@
     "jest/valid-expect": "error",
     "eol-last": "error",
     "no-multiple-empty-lines": ["error", { "max": 2, "maxEOF": 1 }],
-    "semi": "error"
+    "semi": "error",
+    "node/no-unpublished-require": "off"
   }
 }
