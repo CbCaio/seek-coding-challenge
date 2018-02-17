@@ -6,7 +6,7 @@ const {
   DiscountGroup,
   DiscountRule,
   Product,
-  ShoppingCart,
+  CustomerShoppingCartItem,
 } = require('./models');
 
 module.exports = {
@@ -15,6 +15,6 @@ module.exports = {
     DiscountGroup: DiscountGroup.bindKnex(knex),
     DiscountRule: DiscountRule.bindKnex(knex),
     Product: Product.bindKnex(knex),
-    ShoppingCart: ShoppingCart.bindKnex(knex),
+    CustomerShoppingCartItem: CustomerShoppingCartItem.bindKnex(knex),
   },
 };

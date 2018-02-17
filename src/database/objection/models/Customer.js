@@ -6,16 +6,16 @@ module.exports = class Customer extends Model {
   }
 
   static get relationMappings() {
-    const { ShoppingCart } = require('../models');
+    const { CustomerShoppingCartItem } = require('../models');
     const { DiscountGroup } = require('../models');
 
     return {
-      shoppingCart: {
-        relation: Model.HasOneRelation,
-        modelClass: ShoppingCart,
+      shoppingCartItems: {
+        relation: Model.HasManyRelation,
+        modelClass: CustomerShoppingCartItem,
         join: {
           from: `${this.tableName}.id`,
-          to: `${ShoppingCart.tableName}.customerId`,
+          to: `${CustomerShoppingCartItem.tableName}.customerId`,
         },
       },
       discountGroup: {

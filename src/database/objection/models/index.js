@@ -3,5 +3,5 @@ module.exports = {
   DiscountGroup: require('./DiscountGroup'),
   DiscountRule: require('./DiscountRule'),
   Product: require('./Product'),
-  ShoppingCart: require('./ShoppingCart'),
+  CustomerShoppingCartItem: require('./CustomerShoppingCartItem'),
 };
