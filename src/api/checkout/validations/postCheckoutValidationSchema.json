@@ -1,0 +1,20 @@
+{
+  "payload": {
+    "type": "object",
+    "required": [
+      "customer",
+      "product"
+    ],
+    "properties": {
+      "customer": {
+        "type": "string",
+        "maxLength": 255
+      },
+      "product": {
+        "type": "string",
+        "maxLength": 255
+      }
+    },
+    "additionalProperties": false
+  }
+}
