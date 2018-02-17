@@ -1,4 +1,5 @@
-const PricingRule = require('./AbstractPricingRule');
+const PricingRule = require('../abstracts/AbstractPricingRule');
+const { BUY_X_GET_Y } = require('../rulesDictionary');
 
 module.exports = class XforYRule extends PricingRule {
   constructor(productXId,XValue, productYId, YValue){
@@ -7,6 +8,10 @@ module.exports = class XforYRule extends PricingRule {
     this.productYId = productYId;
     this.XValue = XValue;
     this.YValue = YValue;
+  }
+
+  static identifier() {
+    return BUY_X_GET_Y;
   }
   
   satisfiesRuleCondition(products){

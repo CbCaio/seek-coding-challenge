@@ -1,6 +1,7 @@
-const PricingRule = require('./AbstractPricingRule');
+const PricingRule = require('../abstracts/AbstractPricingRule');
+const { DISCOUNT_ON_PRODUCT } = require('../rulesDictionary');
 
-module.exports = class DiscountOnProductRule extends PricingRule {
+module.exports = class DiscountOnProduct extends PricingRule {
   constructor(productId, discountValue, minimumProductsToEnable = 1){
     super();
     this.targetProductId = productId;
@@ -8,6 +9,10 @@ module.exports = class DiscountOnProductRule extends PricingRule {
     this.minimumProductsToEnable = minimumProductsToEnable;
   }
   
+  static identifier() {
+    return DISCOUNT_ON_PRODUCT;
+  }
+
   satisfiesRuleCondition(products){
     const targetProducts = products[this.targetProductId] || [];
     const totalTargetProductBought = targetProducts.length;

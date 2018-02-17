@@ -3,6 +3,10 @@ module.exports = class AbstractPricingRule {
     if(this.satisfiesRuleCondition(products)) this.applyRule(products);
   }
 
+  static identifier(){
+    throw new Error('identifier() not implemented');
+  }
+
   satisfiesRuleCondition(products){
     throw new Error('satisfiesRuleCondition(products) not implemented');
   }
