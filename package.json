@@ -5,10 +5,9 @@
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
-    "migration:run": "./node_modules/.bin/knex --knexfile src/database/knex/knexfile.js migrate:latest",
+    "migrate": "./node_modules/.bin/knex --knexfile src/database/knex/knexfile.js migrate:latest",
     "migration:rollback": "./node_modules/.bin/knex --knexfile src/database/knex/knexfile.js migrate:rollback",
     "test:integration": "jest --config test/integration/jest.config.js --bail --forceExit --runInBand",
-    "test:unit": "jest --config test/unit/jest.config.js --bail --forceExit"
   },
   "repository": {
     "type": "git",

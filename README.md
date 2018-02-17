@@ -67,6 +67,13 @@ The test structure runs a mysql instance and populate it on every suite of tests
 
 With docker, you can run the application using:
 - docker-compose up -d microservice (will map to port 9000)
+- then run `npm run migrate` locally just to set up the database 
+
+Optionally, you can run the previous command inside the container if you don't have anything installed besides docker 
+- `docker ps` check for container name on the last column
+- `docker exec -it [check container name] sh)
+- now inside the container, `npm run migrate`
+
 and to shut it down
 - docker-compose down
 
