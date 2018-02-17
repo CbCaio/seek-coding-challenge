@@ -5,10 +5,10 @@
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
-    "test:integration": "jest --config test/integration/jest.config.js --bail --runInBand --forceExit --passWithNoTests",
-    "test:integration:watch": "jest --config test/integration/jest.config.js --watch --runInBand --passWithNoTests",
-    "test:unit": "jest --config test/unit/jest.config.js --bail --forceExit --coverage --passWithNoTests",
-    "test:unit:watch": "jest --config test/unit/jest.config.js --watch --passWithNoTests"
+    "migration:run": "./node_modules/.bin/knex --knexfile src/database/knex/knexfile.js migrate:latest",
+    "migration:rollback": "./node_modules/.bin/knex --knexfile src/database/knex/knexfile.js migrate:rollback",
+    "test:integration": "jest --config test/integration/jest.config.js --bail --forceExit --runInBand",
+    "test:unit": "jest --config test/unit/jest.config.js --bail --forceExit"
   },
   "repository": {
     "type": "git",
@@ -30,7 +30,8 @@
     "eslint-plugin-jest": "^21.6.2",
     "eslint-plugin-node": "^5.2.1",
     "jest": "^22.3.0",
-    "sqlite3": "^3.1.13"
+    "sqlite3": "^3.1.13",
+    "supertest": "^3.0.0"
   },
   "engines": {
     "node": "=8.9.3"

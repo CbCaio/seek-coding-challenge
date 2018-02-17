@@ -9,3 +9,19 @@ services:
       MYSQL_USER: user
       MYSQL_PASSWORD: secret
       MYSQL_ROOT_PASSWORD: root
+
+  microservice:
+    environment:
+      DATABASE_PORT: 3306
+    ports:
+      - "9000:9000"
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/var/app
+      - /var/app/node_modules
+      - /var/app/coverage
+      - /var/app/logs
+    links:
+      - "mysql:mysql-docker"
