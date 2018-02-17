@@ -2,8 +2,9 @@
   "name": "seek-job-challenge",
   "version": "1.0.0",
   "description": "Seek coding challenge - Ads checkout system",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": {
+    "start": "node src/server.js",
     "test:integration": "jest --config test/integration/jest.config.js --bail --runInBand --forceExit --passWithNoTests",
     "test:integration:watch": "jest --config test/integration/jest.config.js --watch --runInBand --passWithNoTests",
     "test:unit": "jest --config test/unit/jest.config.js --bail --forceExit --coverage --passWithNoTests",
@@ -23,14 +24,23 @@
   },
   "homepage": "https://github.com/CbCaio/seek-coding-challenge#readme",
   "devDependencies": {
-    "jest": "^22.3.0",
     "eslint": "^4.15.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jest": "^21.6.2",
-    "eslint-plugin-node": "^5.2.1"
+    "eslint-plugin-node": "^5.2.1",
+    "jest": "^22.3.0",
+    "sqlite3": "^3.1.13"
   },
   "engines": {
     "node": "=8.9.3"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "is-express-schema-valid": "^1.0.2",
+    "knex": "^0.14.3",
+    "mysql2": "^1.5.2",
+    "objection": "^1.0.0"
   }
 }
