@@ -10,6 +10,7 @@ const {
 } = require('./models');
 
 module.exports = {
+  knex,
   models: {
     Customer: Customer.bindKnex(knex),
     DiscountGroup: DiscountGroup.bindKnex(knex),

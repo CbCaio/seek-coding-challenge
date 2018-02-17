@@ -17,9 +17,14 @@ module.exports = {
     debug: false, ...knexSnakeCaseMappers(),
   },
   test: {
-    client: 'sqlite3',
+    client: 'mysql2',
     connection: {
-      filename: "./mydb.sqlite",
+      host: 'mysql-docker',
+      port: 3306,
+      user: 'root',
+      password: 'root',
+      database: 'db_seek_job_test',
+      charset: 'utf8',
     },
     migrations: {
       directory: __dirname + '/../database/knex/migrations',
