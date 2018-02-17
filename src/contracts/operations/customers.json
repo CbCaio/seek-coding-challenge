@@ -1,0 +1,56 @@
+{
+  "get": {
+    "tags": [
+      "API"
+    ],
+    "summary": "GET /customers/{name}",
+    "description": "Returns all information about a specific customer",
+    "operationId": "getUserByName",
+    "produces": [
+      "application/json"
+    ],
+    "parameters": [
+      {
+        "name": "name",
+        "in": "path",
+        "description": "Apple|Unilever|Nike|Ford|Default [OneOf]",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Success",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "name": { "type": "string"},
+            "shoppingCart": {
+              "$ref": "../definitions/shoppingCart.json"
+            }
+          }
+        },
+        "examples": {
+          "application/json": {
+            "name": "Apple",
+            "shoppingCart": {
+              "items": [
+                {
+                  "discount": 100,
+                  "finalPrice": 123,
+                  "product": {
+                    "id": 1,
+                    "name": "ClassicAd",
+                    "basePrice": 29999,
+                    "features": "asd"
+                  }
+                }
+              ],
+              "totalPrice": 123
+            }
+          }
+        }
+      }
+    }
+  }
+}

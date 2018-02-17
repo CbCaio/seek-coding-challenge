@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "required": [
+    "items",
+    "totalPrice"
+  ],
+  "properties": {
+    "items": {
+      "type":"array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "discount": {
+            "type": "integer"
+          },
+          "finalPrice": {
+            "type": "integer"
+          },
+          "product": {
+            "$ref": "./product.json"
+          }
+        }
+      }
+    },
+    "totalPrice": {
+      "type": "integer"
+    }
+  }
+}

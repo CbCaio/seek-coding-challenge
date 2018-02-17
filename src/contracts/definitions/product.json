@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "basePrice"
+  ],
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "name": {
+      "type": "string"
+    },
+    "basePrice": {
+      "type": "integer"
+    },
+    "features": {
+      "type": "string"
+    }
+  }
+}

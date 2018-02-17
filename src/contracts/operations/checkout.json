@@ -1,0 +1,41 @@
+{
+  "post": {
+    "tags": [
+      "API"
+    ],
+    "summary": "POST /checkout",
+    "description": "Adds a product to the shopping cart",
+    "operationId": "addProduct",
+    "produces": [
+      "application/json"
+    ],
+    "parameters": [
+      {
+        "name": "payload",
+        "in": "body",
+        "description": "Should contain customer and product to add",
+        "required": true,
+        "schema": {
+          "type":"object",
+          "required": [
+            "customer",
+            "product"
+          ],
+          "properties": {
+            "customer": {
+              "type": "string"
+            },
+            "product": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    ],
+    "responses": {
+      "201": {
+        "description": "Success"
+      }
+    }
+  }
+}

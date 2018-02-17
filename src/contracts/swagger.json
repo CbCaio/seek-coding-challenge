@@ -1,0 +1,25 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "description": "Seek Job Challenge.",
+    "version": "1.0.0",
+    "title": "Seek Ads"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:9000",
+      "description": "Local server"
+    }
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/customers/{name}": {
+      "$ref": "operations/customers.json"
+    },
+    "/checkout": {
+      "$ref": "operations/checkout.json"
+    }
+  }
+}
